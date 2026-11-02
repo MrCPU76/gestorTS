@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,42 +7,79 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <h1>Gestor d'Elements</h1>
+
+<h1>Champions League</h1>
+<div class="panell">
 
     <!-- Formulari d'entrada de dades -->
     <div class="card">
-        <h2>Afegir Nou Element</h2>
+        <div class="card.box"></div>
+        <h2>Añade un Club</h2>
 
         <div class="field">
-            <label for="iNom">Nom / Títol:</label>
-            <input type="text" id="iNom" placeholder="Escriu un nom...">
-        </div>
-
-        <div class="field">
-            <label for="sCategoria">Categoria:</label>
-            <select id="sCategoria">
-                <option value="Opció A">Opció A</option>
-                <option value="Opció B">Opció B</option>
-                <option value="Opció C">Opció C</option>
-            </select>
+            <label for="iNom">Club:</label>
+            <input type="text" id="iNom" placeholder="Añade un club...">
         </div>
 
         <div class="field">
-            <label for="iValor">Valor / Preu / Punts:</label>
-            <input type="number" id="iValor" value="0">
+            <label for="iValor">Puntos:</label>
+            <input type="number" id="iValor" value="0" min="0">
         </div>
 
-        <div class="field-checkbox">
-            <label>
-                <input type="checkbox" id="cEstat"> Actiu / Completat
-            </label>
+        <div class="field">
+            <label for="iValor2">GF:</label>
+            <input type="number" id="iValor2" value="0" min="0">
         </div>
 
-        <button id="btnAfegir">Afegir a la Llista</button>
+
+        <div class="field">
+            <label for="iValor3">GC:</label>
+            <input type="number" id="iValor3" value="0" min="0">
+        </div>
+
+        <button id="btnAfegir">Añadir a la clasificación</button>
+
+        <button onclick="ordenarPts()">Ordenar por punts</button>
+
+        <button onclick="ordenarGFGC()">Ordenar por GF/GC</button>
+
+        <div class="LeyendaClubs">
+            <div class="Clasificados"><h3>Clasificados para la eliminatoria</h3></div>
+        </div>
+
     </div>
 
+<div>
+
+    <div class="cardTitulos">
+        <h2>Clubs</h2>
+        <h2>Puntos</h2>
+        <h2>GF/GC</h2>
+    </div>
+    <div id="contenedorlista"></div>
 </div>
+
+    <div>
+        <div class="cardTitulos2">
+            <h2>Clubs</h2>
+            <h2>Puntos</h2>
+            <h2>GF/GC</h2>
+        </div>
+        <div id="contenedorlista2"></div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
 
 <script src="app.js"></script>
 </body>
